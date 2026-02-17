@@ -1,21 +1,18 @@
 /**
- * Main
+ * Layout - Main
  */
 
 .main {
   &__container {
-    @include container("md");
+    @include container("lg");
   }
 
-  &__row {
-    @include row(flex-start, flex-start);
-  }
-
-  &__article {
+  &__content {
     @include col(6, false, "md");
   }
 
-  &__aside {
+  &__sidebar {
     @include col(3, false, "md");
+
   }
 }

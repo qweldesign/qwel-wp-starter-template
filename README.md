@@ -1,6 +1,6 @@
-## QWEL STARTER TEMPLATE
+# QWEL WordPress Theme Starter Kit
 
-[QWEL.DESIGN](https://qwel.design) のweb開発のためのスターターキット
+WordPressオリジナルテーマ開発スターターキット
 
 ---
 

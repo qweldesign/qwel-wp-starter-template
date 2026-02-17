@@ -2,7 +2,7 @@
  * Utility - Scroll Inview
  */
 
-[data-readable] {
+:where(main > .wp-block-template-part:not(.hero)) {
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.5s ease, transform 0.5s ease;

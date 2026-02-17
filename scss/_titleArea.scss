@@ -1,0 +1,13 @@
+/**
+ * Layout - Title Area
+ */
+
+.titleArea {
+  &__container {
+    @include container("lg");
+  }
+
+  &__title {
+    margin: 0;
+  }
+}

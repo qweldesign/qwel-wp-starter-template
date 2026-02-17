@@ -18,8 +18,10 @@ $font-sizes:             (
 ) !default;
 
 // 文字サイズの配列からサイズを抽出する関数 ($keyで指定)
+// WordPressカスタムプロパティ直接参照
 @function font-size($key: "normal") {
-  @return var(--font-size--#{$key});
+  //@return var(--font-size--#{$key});
+  @return var(--wp--preset--font-size--#{$key});
 }
 
 // body

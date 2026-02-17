@@ -3,7 +3,12 @@
  */
 
 .footer {
-  padding: space("x-large");
-  @include background($theme-accent);
-  text-align: center;
+  &__inner {
+    padding: space("x-large");
+    text-align: center;
+  }
+  
+  &__container {
+    @include container("lg");
+  }
 }

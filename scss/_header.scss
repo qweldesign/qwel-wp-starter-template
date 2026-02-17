@@ -11,35 +11,40 @@ $header-height:  4.5rem !default;
   height: $header-height;
   transition: all 0.35s ease;
 
-  a {
-    color: $body-bg;
-  }
+  &__inner {
+    height: 100%;
+    transition: all 0.35s ease;
 
-  // サイトタイトルがテキストの場合 (ロゴ未使用の場合)
-  // モバイル時は header 背景透過
-  // 白文字にテキストシャドウを入れる
-  @media (max-width: breakpoint("md") - 0.1) {
-    .gNav__siteBrand a {
-      color: theme-color("lightest");
-      text-shadow: 0 0 6px #000;
-
-      &:hover {
-        color: theme-color("lightest");
-      }
+    a {
+      color: $body-bg !important; // Override WP defaults
     }
-  }
 
-  // タブレット・デスクトップ時は header 背景を白 (gNavの視認性)
-  // マウスオーバー時、およびファーストビューのスクロール時の設定 
-  @media (min-width: breakpoint("md")) {
-    &:hover, &:not(.is-active) {
-      background-color: $body-bg;
-
-      a, .gNav__siteBrand a {
-        color: $link-color;
+    // サイトタイトルがテキストの場合 (ロゴ未使用の場合)
+    // モバイル時は header 背景透過
+    // 白文字にテキストシャドウを入れる
+    @media (max-width: breakpoint("md") - 0.1) {
+      .gNav__siteBrand a {
+        color: theme-color("lightest");
+        text-shadow: 0 0 6px #000;
 
         &:hover {
-          color: $link-hover-color;
+          color: theme-color("lightest");
+        }
+      }
+    }
+
+    // タブレット・デスクトップ時は header 背景を白 (gNavの視認性)
+    // マウスオーバー時、およびファーストビューのスクロール時の設定 
+    @media (min-width: breakpoint("md")) {
+      .header:hover &, .header:not(.is-active) & {
+        background-color: $body-bg;
+
+        a, .gNav__siteBrand a {
+          color: $link-color !important; // Override WP defaults
+
+          &:hover {
+            color: $link-hover-color !important; // Override WP defaults
+          }
         }
       }
     }

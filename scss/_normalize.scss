@@ -9,53 +9,54 @@
 }
 
 html {
-  font-size: $root-font-size;
+//  font-size: $root-font-size;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0; // Remove the margin in all browsers
-  background-color: $body-bg;
-  color: $body-color;
-  @include body();
+//  background-color: $body-bg;
+//  color: $body-color;
+//  @include body();
   -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @include heading();
-}
+//h1, h2, h3, h4, h5, h6 {
+//  @include heading();
+//}
 
-h1 {
-  font-size: $h1-font-size;
-}
+//h1 {
+//  font-size: $h1-font-size;
+//}
 
-h2 {
-  font-size: $h2-font-size;
-}
+//h2 {
+//  font-size: $h2-font-size;
+//}
 
-h3 {
-  font-size: $h3-font-size;
-}
+//h3 {
+//  font-size: $h3-font-size;
+//}
 
-h4 {
-  font-size: $h4-font-size;
-}
+//h4 {
+//  font-size: $h4-font-size;
+//}
 
-h5 {
-  font-weight: 700;
-  font-size: $h5-font-size;
-}
+//h5 {
+//  font-weight: 700;
+//  font-size: $h5-font-size;
+//}
 
-h6 {
-  font-weight: 700;
-  font-size: $h6-font-size;
-}
+//h6 {
+//  font-weight: 700;
+//  font-size: $h6-font-size;
+//}
 
-p,
-ol, ul,
-li {
-  margin-block: $default-margin;
-}
+//p,
+//ol, ul,
+//li {
+//  margin-top: $default-margin;
+//  margin-bottom: $default-margin;
+//}
 
 small {
   @include small-text();
@@ -65,9 +66,9 @@ blockquote {
   @include blockquote();
 }
 
-a {
-  @include link-text();
-}
+//a {
+//  @include link-text();
+//}
 
 img {
   width: 100%;
@@ -77,7 +78,7 @@ img {
 
 figure {
   display: block;
-  margin: $default-margin 0;
+  //margin: $default-margin 0;
 }
 
 figcaption {

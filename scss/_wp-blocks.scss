@@ -1,0 +1,71 @@
+/**
+ * WP Blocks
+ */
+
+.wp-block {
+  &-navigation {
+    &-item {
+      margin: 0;
+      
+      a {
+        @include link-text();
+      }
+    }
+  }
+
+  &-social-links {
+    margin: 0;
+  }
+
+  &-post {
+    &-terms {
+      padding-inline-start: space();
+
+      a::before {
+        content: "#";
+      }
+
+      &__separator {
+        padding-inline-start: space();
+      }
+    }
+  }
+
+  &-image {
+    overflow: hidden;
+  }
+
+  &-query-pagination {
+    &-numbers {
+      .page-numbers {
+        display: inline-block;
+        background-color: theme-color($theme-accent);
+        color: color-yiq($theme-accent);
+        padding: 1rem;
+        border: 2px solid theme-color("lightest");
+        border-radius: 0.375rem;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.25s ease-in-out;
+        word-break: break-word;
+        outline: 0;
+        user-select: none;
+        cursor: pointer;
+
+        &.current {
+          background-color: color-change($theme-accent);
+          color: color-yiq($theme-accent, true);
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  &-quote {
+    @include blockquote();
+  }
+
+  &-table {
+    @include table();
+  }
+}

@@ -21,8 +21,10 @@ $theme-colors:     map-merge($grays, $colors) !default;
 $theme-accent:     "primary" !default;
 
 // 配色の配列から色指定を抽出する関数
+// WordPressカスタムプロパティを直接参照
 @function theme-color($key: $theme-accent) {
-  @return var(--color--#{$key});
+  //@return var(--color--#{$key});
+  @return var(--wp--preset--color--#{$key});
 }
 
 // bodyの設定
