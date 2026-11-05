@@ -5,7 +5,12 @@
 @use "variables" as *;
 
 .footer {
-  @include background($theme-accent);
-  padding: space("x-large");
-  text-align: center;
+  &__inner {
+    padding: space("x-large");
+    text-align: center;
+  }
+  
+  &__container {
+    @include container("lg");
+  }
 }

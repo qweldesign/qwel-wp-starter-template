@@ -1,3 +1,13 @@
+/*
+Theme Name: QWEL WP
+Description: This is a theme for someone's portfolio or blog. You can customize and use.
+Version: 1.0
+Requires PHP: 8.3
+Author: QWEL.DESIGN
+Author URI: https://qwel.design/
+License: MIT
+*/
+
 @charset "utf-8";
 
 /**
@@ -13,10 +23,14 @@
 @use "root";
 @use "normalize";
 
+// WP BLocks
+@use "wp-blocks";
+
 // Layout
 @use "header";
 @use "gNav";
 @use "main";
+@use "titleArea";
 @use "footer";
 
 // Components
@@ -24,7 +38,6 @@
 @use "button";
 @use "embed";
 @use "breadcrumb";
-@use "pagination";
 @use "backToTop";
 @use "drawerMenu";
 @use "fader";
@@ -32,7 +45,6 @@
 @use "slider";
 
 // Projects
-@use "hero";
 @use "section";
 @use "postItem";
 @use "postList";
@@ -42,8 +54,8 @@
 @use "utilities/scroll-offset";
 @use "utilities/scroll-inview";
 @use "utilities/safe-embed";
-//@use "utilities/flex";
-//@use "utilities/flex-item";
+@use "utilities/flex";
+@use "utilities/flex-item";
 @use "utilities/spacing";
 @use "utilities/text";
 @use "utilities/visibility";

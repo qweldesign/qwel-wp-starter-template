@@ -1,5 +1,5 @@
 /**
- * Project - Form
+ * Form
  */
 
 @use "sass:map";
@@ -8,6 +8,10 @@
 .form {
   @include form();
   text-align: center;
+
+  p:not(:has([type="submit"])) {
+    text-align: left;
+  }
 
   table {
     @include table();
@@ -26,12 +30,12 @@
   }
 
   [type="submit"] {
-    @include make-button();
-    @include make-button-color-normal("primary");
     display: inline-block;
     width: 14rem;
     height: 3.5rem;
-    margin-inline: space();
     line-height: 3.5rem;
+    margin-inline: space();
+    @include make-button();
+    @include make-button-color-normal("primary");
   }
 }

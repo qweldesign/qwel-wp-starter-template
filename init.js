@@ -1,6 +1,29 @@
 // Action Core
 import ActionCore from './js/action-core.js';
-new ActionCore.Preset();
+new ActionCore.ActiveHeader({
+  headerSelector: '.header'
+});
+
+new ActionCore.ScrollSpy({
+  spySectionSelector: '.section__inner',
+  spyNavSelector: '.wp-block-navigation-item'
+});
+
+new ActionCore.ReadableOnScroll({
+  readableSelector: 'main > .wp-block-template-part:not(.hero)'
+})
+
+new ActionCore.BackToTop();
+
+new ActionCore.DrawerMenu({
+  siteBrandSelector: '.gNav__siteBrand',
+  primaryMenuSelector: '.gNav__primaryMenu',
+  socialMenuSelector: '.gNav__socialMenu'
+});
+
+new ActionCore.SafeEmbed({
+  embedSelector: '.embed'
+})
 
 // Fader
 import Fader from './js/fader.js';
@@ -13,23 +36,3 @@ new Modal();
 // Slider
 import Slider from './js/slider.js';
 new Slider();
-
-/**
- * Auto Copyright
- * © 2026 QWEL.DESIGN (https://qwel.design)
- * Released under the MIT License.
- * See LICENSE file for details.
- */
-class AutoCopyright {
-  constructor(startYear, companyName, elem) {
-    elem ||= document.querySelector('.footer__copyright');
-    if (elem) elem.innerHTML = this.generate(startYear, companyName);
-  }
-
-  generate(startYear, companyName) {
-    const currentYear = new Date().getFullYear();
-    return `&copy; ${startYear} - ${currentYear} ${companyName}`;
-  }
-}
-
-new AutoCopyright(2019, 'QWEL.DESIGN');

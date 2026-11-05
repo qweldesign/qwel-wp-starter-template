@@ -1,11 +1,27 @@
 // Variables
 
-// 既定値を変えるときは, ここだけを書き換える. 存在しない変数を書くとエラーになる
-//
-// @forward "settings" with (
-//   $colors: (primary: #209fdf),
-//   $grid-base: 5rem
-// );
+// 色, 余白, 文字サイズの値は theme.json で決める. ここでは theme.json の変数を参照する
 
-@forward "settings";
+@forward "settings" with (
+  $grid-base: var(--wp--custom--spacing--x-large),
+  $gutter: var(--wp--custom--spacing--small),
+  $container-widths: (
+    sm: 600px,
+    md: var(--wp--style--global--content-size),
+    lg: var(--wp--style--global--wide-size)
+  ),
+  $container-pads: (
+    sm: var(--wp--custom--spacing--small),
+    md: var(--wp--custom--spacing--container-pad),
+    lg: var(--wp--custom--spacing--container-pad-wide)
+  ),
+  $spacing-values: (
+    none: 0,
+    x-small: var(--wp--custom--spacing--x-small),
+    small: var(--wp--custom--spacing--small),
+    medium: var(--wp--custom--spacing--medium),
+    large: var(--wp--custom--spacing--large),
+    x-large: var(--wp--custom--spacing--x-large)
+  )
+);
 @forward "mixins";
