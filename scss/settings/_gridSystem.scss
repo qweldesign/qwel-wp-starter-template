@@ -80,8 +80,9 @@ $spacing-values:   (
 ) !default;
 
 // 余白の配列の接頭辞から値を返す関数
+// theme.json の変数を参照する
 @function space($key: "small") {
-  @return var(--spacing--#{$key});
+  @return var(--wp--custom--spacing--#{$key});
 }
 
 // コンテナ生成
@@ -118,7 +119,7 @@ $spacing-values:   (
     }
 
     flex-shrink: $size;
-    flex-basis: $size * $grid-base;
+    flex-basis: calc($size * $grid-base);
   } @else {
     @media (min-width: breakpoint($key)) {
       @if ($flex-grow == false) {
@@ -128,7 +129,7 @@ $spacing-values:   (
       }
 
       flex-shrink: $size;
-      flex-basis: $size * $grid-base;
+      flex-basis: calc($size * $grid-base);
     }
   }
 

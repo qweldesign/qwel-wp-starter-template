@@ -25,8 +25,9 @@ $theme-colors:     map.merge($grays, $colors) !default;
 $theme-accent:     "primary" !default;
 
 // 配色の配列から色指定を抽出する関数
+// theme.json の変数を参照する
 @function theme-color($key: $theme-accent) {
-  @return var(--color--#{$key});
+  @return var(--wp--preset--color--#{$key});
 }
 
 // body の設定

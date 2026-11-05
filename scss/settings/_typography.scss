@@ -21,8 +21,9 @@ $font-sizes:             (
 ) !default;
 
 // 文字サイズの配列からサイズを抽出する関数 ($key で指定)
+// theme.json の変数を参照する
 @function font-size($key: "normal") {
-  @return var(--font-size--#{$key});
+  @return var(--wp--preset--font-size--#{$key});
 }
 
 // body
