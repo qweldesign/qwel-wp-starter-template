@@ -9,15 +9,11 @@
   z-index: 1000;
   width: 100%;
   height: $header-height;
-  transition: all 0.35s ease;
+  transition: background-color 0.35s ease;
 
   &__inner {
     height: 100%;
-    transition: all 0.35s ease;
-
-    a {
-      color: $body-bg !important; // Override WP defaults
-    }
+    transition: background-color 0.35s ease;
 
     // サイトタイトルがテキストの場合 (ロゴ未使用の場合)
     // モバイル時は header 背景透過
@@ -33,8 +29,8 @@
       }
     }
 
-    // タブレット・デスクトップ時は header 背景を白 (gNavの視認性)
-    // マウスオーバー時、およびファーストビューのスクロール時の設定 
+    // タブレット・デスクトップ時は header 背景を白 (gNav の視認性)
+    // マウスオーバー時, およびファーストビューのスクロール時の設定
     @media (min-width: breakpoint("md")) {
       .header:hover &, .header:not(.is-active) & {
         background-color: $body-bg;
@@ -47,6 +43,10 @@
           }
         }
       }
+    }
+
+    a {
+      color: $body-bg !important; // Override WP defaults
     }
   }
 

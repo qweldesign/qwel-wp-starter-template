@@ -1,6 +1,6 @@
 # QWEL WordPress Theme Starter Kit
 
-WordPressオリジナルテーマ開発スターターキット
+WordPress オリジナルテーマ開発スターターキット
 
 ---
 

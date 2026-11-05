@@ -9,42 +9,42 @@
 /*
  * テーマのパス, URI
  */
-define( 'QWEL_THEME_DIR', get_template_directory() );
-define( 'QWEL_THEME_URI', get_template_directory_uri() );
+define('QWEL_THEME_DIR', get_template_directory());
+define('QWEL_THEME_URI', get_template_directory_uri());
 
 /*
- * classのオートロード
+ * class のオートロード
  */
 spl_autoload_register(
-	function( $classname ) {
-		if ( strpos( $classname, 'QWEL_WP' ) === false ) return;
-		$classname = str_replace( '\\', '/', $classname );
-		$classname = str_replace( 'QWEL_WP/', '', $classname );
-		$file      = QWEL_THEME_DIR . '/classes/' . $classname . '.php';
-		if ( file_exists( $file ) ) {
-			require $file;
-		}
-	}
+  function (string $className): void {
+    if (strpos($className, 'QWEL_WP') === false) return;
+    $className = str_replace('\\', '/', $className);
+    $className = str_replace('QWEL_WP/', '', $className);
+    $file = QWEL_THEME_DIR . '/classes/' . $className . '.php';
+    if (file_exists($file)) {
+      require $file;
+    }
+  }
 );
 
 /*
- * Hookする関数群を継承して登録
+ * Hook する関数群を継承して登録
  */
 class QWEL {
-	use	\QWEL_WP\Supports,
-		\QWEL_WP\Scripts,
-		\QWEL_WP\Shortcodes;
-		
-	public function __construct() {
-		// テーマサポート機能
-		add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
+  use \QWEL_WP\Supports,
+    \QWEL_WP\Scripts,
+    \QWEL_WP\Shortcodes;
 
-		// CSS, JSファイルを読み込み
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+  public function __construct() {
+    // テーマサポート機能
+    add_action('after_setup_theme', [$this, 'setup_theme']);
 
-		// ショートコード登録
-		add_action( 'init', [ $this, 'register_shortcode' ] );
-	}
+    // CSS, JSファイルを読み込み
+    add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
+
+    // ショートコード登録
+    add_action('init', [$this, 'register_shortcode']);
+  }
 }
 
 /**

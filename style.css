@@ -15,7 +15,7 @@ License: MIT
  * See LICENSE file for details.
  */
 /**
- * Root
+ * Foundation - Root
  */
 :root {
   --color--darkest--active: #595959;
@@ -102,7 +102,7 @@ button, input, select, textarea {
 }
 
 /**
- * WP Blocks
+ * Foundation - WP Blocks
  */
 .wp-block-navigation-item {
   margin: 0;
@@ -132,20 +132,20 @@ button, input, select, textarea {
 }
 .wp-block-query-pagination-numbers .page-numbers {
   display: inline-block;
-  background-color: var(--wp--preset--color--primary);
-  color: var(--wp--preset--color--lightest);
   padding: 1rem;
   border: 2px solid var(--wp--preset--color--lightest);
   border-radius: 0.375rem;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--lightest);
   text-align: center;
   text-decoration: none;
-  transition: all 0.25s ease-in-out;
   word-break: break-word;
   outline: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   cursor: pointer;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 .wp-block-query-pagination-numbers .page-numbers.current {
   background-color: var(--color--primary--active);
@@ -196,14 +196,11 @@ button, input, select, textarea {
   z-index: 1000;
   width: 100%;
   height: 4.5rem;
-  transition: all 0.35s ease;
+  transition: background-color 0.35s ease;
 }
 .header__inner {
   height: 100%;
-  transition: all 0.35s ease;
-}
-.header__inner a {
-  color: var(--wp--preset--color--lightest) !important;
+  transition: background-color 0.35s ease;
 }
 @media (max-width: 899.9px) {
   .header__inner .gNav__siteBrand a {
@@ -224,6 +221,9 @@ button, input, select, textarea {
   .header:hover .header__inner a:hover, .header:hover .header__inner .gNav__siteBrand a:hover, .header:not(.is-active) .header__inner a:hover, .header:not(.is-active) .header__inner .gNav__siteBrand a:hover {
     color: var(--wp--preset--color--primary) !important;
   }
+}
+.header__inner a {
+  color: var(--wp--preset--color--lightest) !important;
 }
 .header__container {
   margin-inline: auto;
@@ -1168,7 +1168,7 @@ button, input, select, textarea {
 }
 
 /**
- * Form
+ * Project - Form
  */
 .form label {
   display: block;
@@ -1232,13 +1232,6 @@ button, input, select, textarea {
   border-radius: var(--wp--custom--spacing--x-small);
   background-color: rgba(32, 159, 223, 0.05);
 }
-.form [type=submit] {
-  display: inline-block;
-  width: 14rem;
-  height: 3.5rem;
-  line-height: 3.5rem;
-  margin-inline: var(--wp--custom--spacing--small);
-}
 .form [type=submit], .form [type=submit]:active {
   border: 0;
   border-radius: var(--wp--custom--spacing--x-small);
@@ -1263,6 +1256,13 @@ button, input, select, textarea {
 .form [type=submit]:hover, .form [type=submit]:focus {
   background-color: var(--color--primary--active);
   color: var(--wp--preset--color--darkest);
+}
+.form [type=submit] {
+  display: inline-block;
+  width: 14rem;
+  height: 3.5rem;
+  margin-inline: var(--wp--custom--spacing--small);
+  line-height: 3.5rem;
 }
 
 /**

@@ -3,26 +3,24 @@ namespace QWEL_WP;
 
 trait Scripts {
   // CSS, JSファイルを読み込み
-  public static function enqueue_scripts() {
+  public static function enqueue_scripts(): void {
     // バージョン情報を取得
-		$version = wp_get_theme()->get( 'Version' );
+    $version = wp_get_theme()->get('Version');
 
-		// style.css
-		wp_enqueue_style(
-			'style',
-			get_template_directory_uri() . '/style.css',
-			[],
-			$version
-		);
+    // style.css
+    wp_enqueue_style(
+      'style',
+      get_template_directory_uri() . '/style.css',
+      [],
+      $version
+    );
 
-		// init.js
-		wp_enqueue_script_module(
-			'init',
-			get_template_directory_uri() . '/init.js',
-			[],
-			$version
-		);
-
+    // init.js
+    wp_enqueue_script_module(
+      'init',
+      get_template_directory_uri() . '/init.js',
+      [],
+      $version
+    );
   }
-
 }

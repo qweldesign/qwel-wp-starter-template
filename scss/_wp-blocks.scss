@@ -1,5 +1,5 @@
 /**
- * WP Blocks
+ * Foundation - WP Blocks
  */
 
 @use "variables" as *;
@@ -8,7 +8,7 @@
   &-navigation {
     &-item {
       margin: 0;
-      
+
       a {
         @include link-text();
       }
@@ -41,18 +41,18 @@
     &-numbers {
       .page-numbers {
         display: inline-block;
-        background-color: theme-color($theme-accent);
-        color: color-yiq($theme-accent);
         padding: 1rem;
         border: 2px solid theme-color("lightest");
         border-radius: 0.375rem;
+        background-color: theme-color($theme-accent);
+        color: color-yiq($theme-accent);
         text-align: center;
         text-decoration: none;
-        transition: all 0.25s ease-in-out;
         word-break: break-word;
         outline: 0;
         user-select: none;
         cursor: pointer;
+        transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 
         &.current {
           background-color: color-active($theme-accent);
